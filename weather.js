@@ -15,7 +15,7 @@ var x = document.getElementById("demo");
 	    "<br>Longitude: " + position.coords.longitude;
 	     $.ajax({
 				type:'GET',
-				url: 'http://api.openweathermap.org/data/2.5/weather?lat={'+position.coords.latitude+'}&lon={'+position.coords.longitude+'}&APPID='3fe50b72be81a84793b8c0a6b3fa5b78,
+				url: 'http://api.openweathermap.org/data/2.5/weather?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&APPID=3fe50b72be81a84793b8c0a6b3fa5b78&units=metric',
 				success: function(response){
 					// console.log(response['quote'].body);
 					// console.log(response['quote'].author);
