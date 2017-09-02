@@ -1,17 +1,17 @@
 var x = document.getElementById("demo");
-	function getLocation() {	
+	function getLocation() {
 	    if (navigator.geolocation) {
 	        navigator.geolocation.getCurrentPosition(showPosition);
 
-	    } else { 
+	    } else {
 	        x.innerHTML = "Geolocation is not supported by this browser.";
 	    }
 
-	    
-	}	
+
+	}
 
 	function showPosition(position) {
-	    x.innerHTML = "Latitude: " + position.coords.latitude + 
+	    x.innerHTML = "Latitude: " + position.coords.latitude +
 	    "<br>Longitude: " + position.coords.longitude;
 	     $.ajax({
 				type:'GET',
@@ -19,10 +19,12 @@ var x = document.getElementById("demo");
 				success: function(response){
 					// console.log(response['quote'].body);
 					// console.log(response['quote'].author);
-					console.log(response);
+					// x.innerHTML = "Weather is min temp:" + response['main']['temp_min']
+					console.log(response['name']);
+					console.log(response['sys']['country']);
+					console.log(response['main']['temp']);
 					// $('#quote').html('<p>'+$quote+'</p><br>'+$author);
 				}
 			});
 	}
 ;
-
